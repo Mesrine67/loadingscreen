@@ -48,7 +48,7 @@ local changelogs = {
 }
 
 AddEventHandler('playerConnecting', function(name, _setKickReason, deferrals)
-    local discordBotToken = 'MTQyMTkzMzc1NjE1NDkwNDcwNg.GOjstr.3hMgjPsF5TUQhjsxNvG7jD0qmmzWhMH8bxl2ok'
+    local discordBotToken = 'DISCORD_BOT_TOKEN'
     local staffMembers = {
         {
             name = "Ryan miller",
