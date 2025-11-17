@@ -89,6 +89,7 @@ export type StaffMember = {
 
 export type SettingsProps = {
   serverAddress?: string;
+  name: string;
   primaryColor: MantineColor;
   primaryShade: MantineColorShade;
   carouselTime: number;

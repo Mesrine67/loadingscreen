@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import type { SettingsProps } from './../typings';
 
 export const useSettings = create<SettingsProps>(() => ({
+  name: 'PaPi', 
   primaryColor: 'orange', 
   primaryShade: 6,
   carouselTime: 15,

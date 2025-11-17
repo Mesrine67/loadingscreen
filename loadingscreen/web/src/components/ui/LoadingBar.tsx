@@ -17,7 +17,7 @@ import {
 import { faJs } from '@fortawesome/free-brands-svg-icons';
 import type { EventsData } from './../../typings';
 import { fetchNui } from '../../utils/fetchNui';
-
+import { debugLoadingScreen } from '../../utils/debugLoadingScreen';
 // Fonction utilitaire pour fusionner plusieurs refs
 function mergeRefs<T = any>(...refs: React.Ref<T>[]) {
   return (node: T) => {

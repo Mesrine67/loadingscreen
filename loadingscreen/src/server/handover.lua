@@ -48,6 +48,7 @@ local changelogs = {
 }
 
 AddEventHandler('playerConnecting', function(name, _setKickReason, deferrals)
+    local playerId = source
     local discordBotToken = 'DISCORD_BOT_TOKEN'
     local staffMembers = {
         {
@@ -145,6 +146,7 @@ AddEventHandler('playerConnecting', function(name, _setKickReason, deferrals)
     }
     local backgroundImages = 2
     local data = {
+        name = GetPlayerName(playerId),
         primaryColor = primaryColor,
         primaryShade = primaryShade,
         carouselTime = carouselTime,

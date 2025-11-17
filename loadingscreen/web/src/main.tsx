@@ -35,6 +35,11 @@ declare global {
     nuiHandoverData?: SettingsProps;
   }
 }
+
+export type LoadingScreenState = {
+  state?: boolean;
+}
+
 const root = document.getElementById('root');
 const App: React.FC = () => {
   const [curTheme, setCurTheme] = useState(theme);
@@ -56,17 +61,19 @@ const App: React.FC = () => {
   }, []);
   
   useNuiEvent('UPDATE_SETTINGS', (data: Partial<SettingsProps>) => {
+    console.log('UPDATE_SETTINGS ici');
     useSettings.setState((state) => ({...state, ...data,}));
   });
-
-  // Gestionnaire d'événements DOMContentLoaded
-  useEffect(() => {
-    const handleDOMContentLoaded = () => {
+  useNuiEvent('loadingScreenState', (data: LoadingScreenState) => {
+    console.log('loadingScreenState: ', data.state);
+  });
+  window.addEventListener('DOMContentLoaded', () => {
       console.log('Page chargée, initialisation de l\'écran de chargement');
       console.log(`Vous vous connectez à ${window.nuiHandoverData?.serverAddress}`);
-    };
-    document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
-  }, []);
+      console.log(`Ton nom ${window.nuiHandoverData?.name}`);
+      // a thing to note is the use of innerText, not innerHTML: names are user input and could contain bad HTML!
+      // document.querySelector('#namePlaceholder > span').innerText = window.nuiHandoverData.name;
+  });
 
   return (  
     <MantineEmotionProvider>
