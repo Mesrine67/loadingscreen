@@ -1,0 +1,42 @@
+/* Animations pour la barre de progression */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes moveStripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 0;
+  }
+}
+
+.loading-bar-container {
+  animation: pulse 2s infinite;
+}
+
+/* Animation pour le texte de chargement */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.loading-text {
+  animation: fadeInOut 2s infinite;
+}
